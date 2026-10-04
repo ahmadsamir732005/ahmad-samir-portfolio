@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ahmad Samir Mohamed Kotob — Information Systems & Data Specialist portfolio.">
+<title>Ahmad Samir | Information Systems & Data Specialist</title>
+<style>
+:root{
+  --bg:#071b1a; --bg2:#0b2927; --card:#103532; --text:#f5f7f5;
+  --muted:#b9c8c5; --accent:#d8e85c; --accent2:#8fc8b8; --line:#24534e;
+  --shadow:0 20px 60px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:linear-gradient(145deg,var(--bg),#0a2422 55%,#061614);
+  color:var(--text); line-height:1.65;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;background:rgba(7,27,26,.86);
+  backdrop-filter:blur(16px);border-bottom:1px solid rgba(143,200,184,.15)
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.4px}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--accent)}
+.hero{padding:100px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(44px,7vw,78px);line-height:1.02;margin:16px 0 20px;letter-spacing:-3px}
+h1 .accent{color:var(--accent)}
+.hero p{font-size:18px;color:var(--muted);max-width:720px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 19px;border-radius:12px;font-weight:800;border:1px solid var(--line);transition:.2s}
+.btn-primary{background:var(--accent);color:#12221f;border-color:var(--accent)}
+.btn-secondary{background:transparent;color:var(--text)}
+.btn:hover{transform:translateY(-2px)}
+.profile-card{
+  background:linear-gradient(160deg,#153e3a,#0b2826);border:1px solid var(--line);
+  border-radius:28px;padding:30px;box-shadow:var(--shadow)
+}
+.initials{width:90px;height:90px;border-radius:26px;background:var(--accent);color:#12221f;
+display:grid;place-items:center;font-size:31px;font-weight:900;margin-bottom:22px}
+.profile-card h3{font-size:23px}.profile-card p{font-size:14px;margin-top:8px}
+.quick{margin-top:25px;display:grid;gap:12px}.quick a{color:var(--muted);font-size:14px}
+.quick a:hover{color:var(--accent)}
+section{padding:82px 0}
+.section-head{margin-bottom:38px}
+.section-head .eyebrow{margin-bottom:7px}
+h2{font-size:36px;letter-spacing:-1px}
+.section-head p{color:var(--muted);max-width:700px;margin-top:8px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.panel{background:rgba(16,53,50,.7);border:1px solid var(--line);border-radius:22px;padding:28px}
+.panel p{color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.skill{padding:18px;border:1px solid var(--line);border-radius:16px;background:#0d302d}
+.skill strong{display:block;margin-bottom:5px}.skill span{font-size:13px;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{background:#0d302d;border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;min-height:270px}
+.project-num{color:var(--accent);font-weight:900;font-size:13px}
+.project h3{font-size:21px;margin:10px 0 9px}.project p{color:var(--muted);font-size:14px;flex:1}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.tag{border:1px solid #2b5c56;color:#dce7e4;padding:5px 9px;border-radius:999px;font-size:12px}
+.timeline{display:grid;gap:18px}
+.timeline-item{display:grid;grid-template-columns:180px 1fr;gap:25px;padding:24px;border-left:2px solid var(--accent2);background:#0d302d;border-radius:0 18px 18px 0}
+.date{color:var(--accent);font-weight:800;font-size:13px}
+.timeline-item h3{font-size:19px}.timeline-item .org{color:var(--accent2);font-weight:700;font-size:14px}
+.timeline-item p{color:var(--muted);font-size:14px;margin-top:8px}
+.certificate{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:#0d302d;border:1px solid var(--line);border-radius:22px;padding:28px}.certificate p{color:var(--muted);font-size:14px;margin-top:8px}.certificate a{white-space:nowrap}.contact{background:linear-gradient(135deg,#123b37,#0a2422);border:1px solid var(--line);border-radius:28px;padding:42px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.contact p{color:var(--muted);max-width:650px;margin-top:8px}
+footer{padding:35px 0;color:#91aaa5;font-size:13px;border-top:1px solid rgba(143,200,184,.12);margin-top:30px}
+@media(max-width:850px){
+ .hero-grid,.about{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}
+ .projects{grid-template-columns:1fr}.nav-links{display:none}.hero{padding-top:65px}
+}
+@media(max-width:520px){
+ .skills{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:6px}
+ .contact{padding:28px;flex-direction:column;align-items:flex-start}
+ h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Ahmad <span>Samir</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#experience">Experience</a><a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Information Systems & Data</div>
+      <h1>Ahmad <span class="accent">Samir</span></h1>
+      <p>Information Systems & Data Specialist focused on Data Analytics, Power BI, SQL, Excel and practical technology solutions.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/ahmad-samir-1074052b3" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-secondary" href="mailto:ahmadsamir7march@gmail.com">Email Me</a>
+      </div>
+    </div>
+    <aside class="profile-card">
+      <div class="initials">AS</div>
+      <h3>Ahmad Samir Mohamed Kotob</h3>
+      <p>Computer Science student — Information Systems (IS), AASTMT</p>
+      <div class="quick">
+        <a href="tel:+201283682835">📞 +20 128 368 2835</a>
+        <a href="mailto:ahmadsamir7march@gmail.com">✉️ ahmadsamir7march@gmail.com</a>
+        <a href="https://www.linkedin.com/in/ahmad-samir-1074052b3" target="_blank" rel="noopener">in LinkedIn Profile ↗</a>
+        <span style="color:#91aaa5;font-size:14px">📍 Alexandria, Egypt</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">01 — About</div><h2>Professional Summary</h2></div>
+  <div class="about">
+   <div class="panel"><p>I am an Information Systems student at the Arab Academy for Science, Technology & Maritime Transport (AASTMT), building practical experience across data analytics, software development, IT support and networking.</p><br><p>My current focus is data analysis and business intelligence, using Power BI, DAX, SQL and Excel to transform data into useful insights and interactive dashboards. I also have a software-development background with Java, JavaFX, Maven and UML.</p></div>
+   <div class="panel"><p>Alongside academic work, I completed practical IT training at Egytrans and technical training through the Digital Egypt Pioneers Initiative (DEPI).</p><br><p>I enjoy analytical problem solving, learning new technologies, collaborating with teams and turning technical requirements into practical solutions.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">02 — Capabilities</div><h2>Core Skills</h2><p>A cross-functional technical foundation with a current emphasis on Data Analytics and Business Intelligence.</p></div>
+  <div class="skills">
+   <div class="skill"><strong>Power BI & DAX</strong><span>Interactive dashboards, KPIs, measures and analytical models</span></div>
+   <div class="skill"><strong>SQL</strong><span>Database querying, filtering, aggregation and data retrieval</span></div>
+   <div class="skill"><strong>Excel</strong><span>Data analysis, formulas, modeling and reporting</span></div>
+   <div class="skill"><strong>Data Cleaning</strong><span>Preparing, transforming and validating datasets</span></div>
+   <div class="skill"><strong>Data Modeling</strong><span>Relationships, dimensional concepts and Star Schema</span></div>
+   <div class="skill"><strong>Java & JavaFX</strong><span>OOP desktop applications with Maven and FXML</span></div>
+   <div class="skill"><strong>Software Engineering</strong><span>UML, class design and structured development</span></div>
+   <div class="skill"><strong>IT & Networking</strong><span>Infrastructure support, troubleshooting and network fundamentals</span></div>
+   <div class="skill"><strong>Professional Skills</strong><span>Communication, teamwork, adaptability and problem solving</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">03 — Work</div><h2>Featured Projects</h2><p>Selected academic and practical projects demonstrating analytics, software development and data handling.</p></div>
+  <div class="projects">
+   <article class="project"><div class="project-num">PROJECT 01 · POWER BI</div><h3>Sales Data Analysis Dashboard</h3><p>Built a Power BI sales-analysis report using a Sales Data dataset. The report includes sales and profit analysis by year, product category and product, with KPI cards and visual summaries to support performance analysis.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">Sales Analysis</span><span class="tag">KPIs</span><span class="tag">Data Visualization</span></div><div class="actions" style="margin-top:18px"><a class="btn btn-primary" href="projects/Sales_Data_Analysis_Dashboard.pbix" download>Download PBIX ↗</a></div></article>
+   <article class="project"><div class="project-num">PROJECT 02</div><h3>Power BI Executive Sales Dashboard</h3><p>Built an interactive, single-page dashboard focused on clear KPI presentation and visual analysis to support fast understanding of sales performance.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">KPIs</span><span class="tag">Data Visualization</span></div></article>
+   <article class="project"><div class="project-num">PROJECT 03</div><h3>Pharmacy Management System</h3><p>Developed a desktop application applying OOP concepts to manage inventory, user access, sales and automated invoice calculations, with structured JavaFX screens and UML design.</p><div class="tags"><span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">Maven</span><span class="tag">FXML</span><span class="tag">UML</span></div></article>
+   <article class="project"><div class="project-num">PROJECT 04</div><h3>Excel Data Analytics & Reporting Tool</h3><p>Created a practical Excel-based workflow for organizing, cleaning and analyzing daily data using formulas and structured reporting techniques.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Data Cleaning</span><span class="tag">Reporting</span></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="experience">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">04 — Experience</div><h2>Practical Experience</h2></div>
+  <div class="timeline">
+   <div class="timeline-item"><div class="date">2025 · Jul–Aug</div><div><h3>IT Technical Support Intern</h3><div class="org">Egytrans — Alexandria, Egypt</div><p>Practical exposure to troubleshooting, network infrastructure, hardware and enterprise IT support. Worked with security endpoints, web filtering, antivirus deployment and technical problem resolution.</p></div></div>
+   <div class="timeline-item"><div class="date">2024 · Jul–Aug</div><div><h3>IT Technical Support Intern</h3><div class="org">Egytrans — Alexandria, Egypt</div><p>Supported network systems and IT infrastructure while gaining hands-on experience with Windows networking concepts, DNS, DHCP, IP addressing, hardware components and technical documentation.</p></div></div>
+   <div class="timeline-item"><div class="date">Training</div><div><h3>Digital Egypt Pioneers Initiative (DEPI)</h3><div class="org">Ministry of Communications and Information Technology (MCIT)</div><p>Technical training focused on building practical IT and data-related skills through applied learning and projects.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="education">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">05 — Education</div><h2>Education</h2></div>
+  <div class="panel">
+   <h3 style="font-size:22px">Arab Academy for Science, Technology & Maritime Transport (AASTMT)</h3>
+   <p style="color:var(--accent2);font-weight:700;margin-top:5px">Computer Science — Information Systems (IS)</p>
+   <p style="margin-top:10px">Sep 2023 — Current · College of Computing & Information Technology · Alexandria, Egypt</p>
+  </div>
+ </div>
+</section>
+
+
+
+<section id="project-files">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">06 — Project Files</div><h2>Project Files</h2><p>Download the original project file to inspect the work directly. More project files can be added as they become available.</p></div>
+  <div class="projects">
+   <article class="project"><div class="project-num">AVAILABLE FILE</div><h3>Sales Data Analysis Dashboard</h3><p>The original Power BI Desktop report file used for the sales-analysis project. Open it with Microsoft Power BI Desktop to inspect the model, visuals and measures.</p><div class="tags"><span class="tag">.PBIX</span><span class="tag">Power BI</span></div><div class="actions" style="margin-top:18px"><a class="btn btn-primary" href="projects/Sales_Data_Analysis_Dashboard.pbix" download>Download Project ↗</a></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="certificates">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">07 — Credentials</div><h2>Certificates</h2><p>Selected credentials supporting my foundation in data and analytics.</p></div>
+  <div class="certificate">
+   <div>
+    <div class="project-num">IBM SKILLSBUILD · AUG 20, 2026</div>
+    <h3 style="font-size:22px;margin-top:8px">Data Fundamentals</h3>
+    <p>Issued by IBM SkillsBuild. This certificate represents foundational knowledge in data concepts and supports my ongoing development in Data Analytics and Business Intelligence.</p>
+   </div>
+   <a class="btn btn-primary" href="https://www.credly.com/badges/4755a34f-5355-48aa-a65e-47ab4559a222" target="_blank" rel="noopener">Verify Certificate ↗</a>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="contact">
+   <div><div class="eyebrow">08 — Contact</div><h2>Let's connect.</h2><p>For internships, junior data analyst opportunities, academic collaboration or practical data projects, feel free to get in touch.</p></div>
+   <div class="actions" style="margin-top:0">
+    <a class="btn btn-primary" href="mailto:ahmadsamir7march@gmail.com">Email</a>
+    <a class="btn btn-secondary" href="tel:+201283682835">Call</a>
+    <a class="btn btn-secondary" href="https://www.linkedin.com/in/ahmad-samir-1074052b3" target="_blank" rel="noopener">LinkedIn ↗</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">© 2026 Ahmad Samir Mohamed Kotob · Information Systems & Data Specialist</div>
+</footer>
+</body>
+</html>
